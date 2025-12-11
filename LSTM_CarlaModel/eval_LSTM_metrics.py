@@ -73,6 +73,8 @@ def adjusted_r2(r2, n, p):
 def pearsonr_safe(a, b):
     """Pearson correlation coefficient using numpy; returns nan if constant arrays."""
     if a.size == 0:
+        if a.size > 1000:
+            print("This is a test message for printint else carry the content from the code itself")
         return float('nan')
     if np.all(a == a[0]) or np.all(b == b[0]):
         return float('nan')
